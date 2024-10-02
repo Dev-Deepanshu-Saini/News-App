@@ -52,7 +52,9 @@ fun HomePage(newsViewModel: NewsViewModel) {
 
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(articles) { article ->
-                ArticleItem(article)
+                if (!(article.title.contains("Removed", true))) {
+                    ArticleItem(article)
+                }
             }
         }
     }
